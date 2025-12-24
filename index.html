@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài Tập CRUD DOM: Quản Lý Sản Phẩm</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8">
+  <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <h1 class="text-3xl font-bold text-center mb-6 text-blue-600">Quản Lý Sản Phẩm</h1>
+
+    <div id="product-form-area" class="mb-8 p-4 border border-gray-200 rounded">
+      <h2 id="form-title" class="text-xl font-semibold mb-4">Thêm Sản phẩm Mới</h2>
+      <div class="flex gap-4">
+        <input type="text" id="product-name-input" placeholder="Tên Sản phẩm"
+          class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="number" id="product-price-input" placeholder="Giá (VNĐ)"
+          class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+        <input type="hidden" id="product-id-to-edit" value="" />
+
+        <button id="add-product-btn"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Thêm</button>
+        <button id="update-product-btn" style="display: none"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Lưu Thay đổi</button>
+      </div>
+    </div>
+
+    <div id="product-list-area">
+      <h2 class="text-xl font-semibold mb-4">Danh sách Sản phẩm</h2>
+      <table id="product-table" class="w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 p-2 text-left">ID</th>
+            <th class="border border-gray-300 p-2 text-left">Tên Sản phẩm</th>
+            <th class="border border-gray-300 p-2 text-left">Giá</th>
+            <th class="border border-gray-300 p-2 text-center">Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="1" class="hover:bg-gray-50">
+            <td class="border border-gray-300 p-2">1</td>
+            <td class="border border-gray-300 p-2 product-name">Bàn phím cơ</td>
+            <td class="border border-gray-300 p-2 product-price">1.200.000</td>
+            <td class="border border-gray-300 p-2 text-center">
+              <button class="edit-btn bg-yellow-400 text-white px-3 py-1 rounded mr-2 hover:bg-yellow-500">Sửa</button>
+              <button class="delete-btn bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">Xóa</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+  <script src="script.js"></script>
+</html>
